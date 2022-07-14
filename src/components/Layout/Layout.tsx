@@ -1,12 +1,8 @@
-// React
 import React, { ReactNode } from 'react';
-
-// Components
-import Header from './Header';
-import Footer from './Footer';
+import Sidebar from '../Sidebar';
 
 // Styling
-import '../../styles/global.css';
+// import '../../styles/global.css';
 
 type LayoutProps = {
 	children: ReactNode;
@@ -14,21 +10,11 @@ type LayoutProps = {
 };
 
 function Layout({ children, id }: LayoutProps): React.ReactElement {
-	function showHeader(): React.ReactNode {
-		return id === 'indexPageContainer' ? null : <Header />;
-	}
-
-	function showFooter(): React.ReactNode {
-		return id === 'indexPageContainer' ? <Footer /> : null;
-	}
-
 	return (
 		<>
-			{showHeader()}
+			<Sidebar />
 
 			<main id={id}> {children} </main>
-
-			{showFooter()}
 		</>
 	);
 }
