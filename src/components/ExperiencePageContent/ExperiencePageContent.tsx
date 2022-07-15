@@ -1,7 +1,18 @@
 import React from 'react';
+import { experiencePageHeaderItems } from '../../lib/Constants';
+import PageHeader from '../Reusable/PageHeader';
+import Experience from './Experience';
 
 function ExperiencePageContent() {
-	return <h1>ExperiencePageContent</h1>;
+	const { title, subtitle } = experiencePageHeaderItems;
+
+	return (
+		<>
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<Experience />
+		</>
+	);
 }
 
 export default ExperiencePageContent;

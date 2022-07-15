@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import Sidebar from '../Sidebar';
 
-// Styling
-// import '../../styles/global.css';
+import '../../stylesheets/reset.css';
+import { MainStyled, Wrapper } from '../Reusable/StyledComponents';
 
 type LayoutProps = {
 	children: ReactNode;
@@ -11,11 +11,11 @@ type LayoutProps = {
 
 function Layout({ children, id }: LayoutProps): React.ReactElement {
 	return (
-		<>
+		<Wrapper>
 			<Sidebar />
 
-			<main id={id}> {children} </main>
-		</>
+			<MainStyled id={id}> {children} </MainStyled>
+		</Wrapper>
 	);
 }
 
