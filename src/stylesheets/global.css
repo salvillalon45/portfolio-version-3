@@ -1,0 +1,34 @@
+/* @media only screen and (max-width: 426px) {
+	.sidebarStyled {
+		display: none;
+	}
+
+	.horizontalSidebarStyled {
+		display: block;
+	}
+
+	.wrapper {
+		grid-template-areas:
+			'main'
+			'sidebar';
+	}
+} */
+
+/* Layout of Pages */
+/* -------------------------------------- */
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+/*
+  From Wesbos CSS Grid Course
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}

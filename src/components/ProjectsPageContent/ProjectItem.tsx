@@ -1,5 +1,10 @@
 import React from 'react';
-import { ProjectImage, ProjectItemStyled } from '../Reusable/StyledComponents';
+import {
+	AboutDataStyled,
+	ProjectImage,
+	ProjectItemStyled,
+	TextBold700Styled
+} from '../Reusable/StyledComponents';
 import Test from '../../images/test.jpg';
 
 type ProjectItemProps = {
@@ -14,8 +19,8 @@ function ProjectItem(projectData: ProjectItemProps) {
 
 	return (
 		<ProjectItemStyled>
-			<div>
-				<p>{name}</p>
+			<AboutDataStyled>
+				<TextBold700Styled>{name}</TextBold700Styled>
 				<p>{description}</p>
 				<p>
 					<a href={link_to_code}>Link to Code</a>
@@ -23,7 +28,7 @@ function ProjectItem(projectData: ProjectItemProps) {
 				<p>
 					<a href={link_to_site}>Link to Site</a>
 				</p>
-			</div>
+			</AboutDataStyled>
 
 			<ProjectImage src={Test} />
 		</ProjectItemStyled>

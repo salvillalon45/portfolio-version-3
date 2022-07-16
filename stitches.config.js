@@ -28,6 +28,12 @@ export const {
 			blue: '#0a192f',
 			white: '#fff',
 			backgroundGray: '#d7d7d7'
+		},
+		media: {
+			bp1: '(max-width: 426px)',
+			bp2: '(max-width: 769px)',
+			bp3: '(min-width: 575px)',
+			bp4: '(min-width: 750px)'
 		}
 	}
 });

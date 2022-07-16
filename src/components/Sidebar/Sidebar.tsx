@@ -12,7 +12,12 @@ import SidebarMenu from './SidebarMenu';
 
 function Sidebar() {
 	return (
-		<SidebarStyled>
+		<SidebarStyled
+			className='sidebarStyled'
+			color={{
+				'@bp2': 'violet'
+			}}
+		>
 			<SidebarLogoStyled>
 				<Logo>
 					Salvador <br /> Villalon Jr

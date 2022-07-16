@@ -16,7 +16,7 @@ function PageHeader({ title, subtitle }: PageHeaderProps) {
 		<PageHeaderContainerStyled>
 			<TitleStyled>{title}</TitleStyled>
 			<SubtitleStyled>{subtitle}</SubtitleStyled>
-			<SeparatorStyled css={{ margin: '15px 0' }} />
+			<SeparatorStyled />
 		</PageHeaderContainerStyled>
 	);
 }

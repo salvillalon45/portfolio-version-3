@@ -1,13 +1,14 @@
 import React from 'react';
 import AboutPageContent from '../components/AboutPageContent';
 import Layout from '../components/Layout';
+import { LayoutSection } from '../components/Reusable/StyledComponents';
 
 function AboutPage() {
 	return (
 		<Layout id={'aboutPageContainer'}>
-			<section>
+			<LayoutSection>
 				<AboutPageContent />
-			</section>
+			</LayoutSection>
 		</Layout>
 	);
 }

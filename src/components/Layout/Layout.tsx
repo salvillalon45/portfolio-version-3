@@ -1,8 +1,13 @@
 import React, { ReactNode } from 'react';
 import Sidebar from '../Sidebar';
-
 import '../../stylesheets/reset.css';
-import { MainStyled, Wrapper } from '../Reusable/StyledComponents';
+import {
+	GridWrapper,
+	MainStyled,
+	MobileGridWrapper
+} from '../Reusable/StyledComponents';
+import HorizontalSidebar from '../Sidebar/HorizontalSidebar';
+import { useViewport } from '../../lib/Hooks';
 
 type LayoutProps = {
 	children: ReactNode;
@@ -10,12 +15,21 @@ type LayoutProps = {
 };
 
 function Layout({ children, id }: LayoutProps): React.ReactElement {
-	return (
-		<Wrapper>
+	console.log(useViewport());
+
+	let content = (
+		<>
+			{/* {useViewport().width < 426 ? <HorizontalSidebar /> : <Sidebar />} */}
 			<Sidebar />
 
 			<MainStyled id={id}> {children} </MainStyled>
-		</Wrapper>
+		</>
+	);
+
+	return useViewport().width < 426 ? (
+		<MobileGridWrapper>{content}</MobileGridWrapper>
+	) : (
+		<GridWrapper>{content}</GridWrapper>
 	);
 }
 
