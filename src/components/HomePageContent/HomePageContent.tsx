@@ -2,7 +2,7 @@ import React from 'react';
 import { homePageHeaderItems } from '../../lib/Constants';
 import PageHeader from '../Reusable/PageHeader';
 import HomePagePicture from '../../images/home_pic_1.jpg';
-import { HomePageImage } from '../Reusable/StyledComponents';
+import { BodyTextStyled, HomePageImage } from '../Reusable/StyledComponents';
 
 function HomePageContent() {
 	const { title, subtitle } = homePageHeaderItems;
@@ -12,7 +12,7 @@ function HomePageContent() {
 			<HomePageImage src={HomePagePicture} />
 			<PageHeader title={title} subtitle={subtitle} />
 
-			<p>
+			<BodyTextStyled>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 				varius metus elit, vitae euismod diam dignissim non. Mauris
 				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
@@ -21,7 +21,7 @@ function HomePageContent() {
 				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
 				feugiat venenatis. Phasellus et tristique felis, vel consequat
 				nunc.
-			</p>
+			</BodyTextStyled>
 		</>
 	);
 }

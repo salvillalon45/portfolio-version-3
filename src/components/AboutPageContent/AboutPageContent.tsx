@@ -1,6 +1,7 @@
 import React from 'react';
 import { aboutPageHeaderItems } from '../../lib/Constants';
 import PageHeader from '../Reusable/PageHeader';
+import { BodyTextStyled } from '../Reusable/StyledComponents';
 
 function AboutPageContent() {
 	const { title, subtitle } = aboutPageHeaderItems;
@@ -9,7 +10,7 @@ function AboutPageContent() {
 		<>
 			<PageHeader title={title} subtitle={subtitle} />
 
-			<p>
+			<BodyTextStyled>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 				varius metus elit, vitae euismod diam dignissim non. Mauris
 				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
@@ -18,9 +19,9 @@ function AboutPageContent() {
 				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
 				feugiat venenatis. Phasellus et tristique felis, vel consequat
 				nunc.
-			</p>
+			</BodyTextStyled>
 
-			<p>
+			<BodyTextStyled>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 				varius metus elit, vitae euismod diam dignissim non. Mauris
 				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
@@ -29,7 +30,7 @@ function AboutPageContent() {
 				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
 				feugiat venenatis. Phasellus et tristique felis, vel consequat
 				nunc.
-			</p>
+			</BodyTextStyled>
 		</>
 	);
 }

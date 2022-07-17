@@ -1,6 +1,7 @@
 import React from 'react';
 import {
 	AboutDataStyled,
+	BodyTextStyled,
 	ProjectImage,
 	ProjectItemStyled,
 	TextBold700Styled
@@ -21,7 +22,7 @@ function ProjectItem(projectData: ProjectItemProps) {
 		<ProjectItemStyled>
 			<AboutDataStyled>
 				<TextBold700Styled>{name}</TextBold700Styled>
-				<p>{description}</p>
+				<BodyTextStyled>{description}</BodyTextStyled>
 				<p>
 					<a href={link_to_code}>Link to Code</a>
 				</p>

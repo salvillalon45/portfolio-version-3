@@ -26,8 +26,10 @@ export const {
 		colors: {
 			gray: '#a0a0a0',
 			blue: '#0a192f',
-			white: '#fff',
-			backgroundGray: '#d7d7d7'
+			gray1: '#fff',
+			gray2: '#eff5f4',
+			gray3: '#101010',
+			gray4: '#a0a0a0'
 		},
 		media: {
 			bp1: '(max-width: 426px)',
@@ -36,4 +38,15 @@ export const {
 			bp4: '(min-width: 750px)'
 		}
 	}
+});
+
+export const darkTheme = createTheme({
+	colors: {
+		gray1: '#101010',
+		gray2: '#1f1c19',
+		gray3: '#ededed',
+		gray4: '#a0a0a0'
+	},
+	space: {},
+	fonts: {}
 });

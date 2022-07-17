@@ -14,6 +14,33 @@
 	}
 } */
 
+/* Light Mode */
+:root {
+	--color-background: white;
+	--color-text: #222;
+	--color-primary: #164bc5;
+}
+
+/* Dark Mode */
+:root.dark {
+	--color-background: black;
+	--color-text: #ddd;
+	--color-primary: #0f9640;
+}
+
+body.light-mode {
+	/* background-color: #fff;
+	color: #333;
+	transition: background-color 0.3s ease;
+	--color-primary: #0f9640; */
+}
+body.dark-mode {
+	/* background-color: #1a1919;
+	color: #999; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
 /* Layout of Pages */
 /* -------------------------------------- */
 html,

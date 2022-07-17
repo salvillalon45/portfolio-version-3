@@ -4,7 +4,8 @@ import {
 	TextBold700Styled,
 	StyledAvatar,
 	StyledImage,
-	AboutDataStyled
+	AboutDataStyled,
+	BodyTextStyled
 } from '../Reusable/StyledComponents';
 
 type ExperienceItemProps = {
@@ -36,7 +37,7 @@ function ExperienceItem({
 
 			<AboutDataStyled>
 				<TextBold700Styled>{job_title}</TextBold700Styled>
-				<p>{description}</p>
+				<BodyTextStyled>{description}</BodyTextStyled>
 				<p>{date.toISOString()}</p>
 				<p>
 					<a href={link_to_company}>Link to Site</a>

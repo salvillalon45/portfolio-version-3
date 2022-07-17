@@ -8,6 +8,8 @@ import {
 } from '../Reusable/StyledComponents';
 import HorizontalSidebar from '../Sidebar/HorizontalSidebar';
 import { useViewport } from '../../lib/Hooks';
+import useDarkMode from 'use-dark-mode';
+import { darkTheme } from '../../../stitches.config.js';
 
 type LayoutProps = {
 	children: ReactNode;
@@ -15,21 +17,27 @@ type LayoutProps = {
 };
 
 function Layout({ children, id }: LayoutProps): React.ReactElement {
-	console.log(useViewport());
+	const viewPort = useViewport().width < 426;
+	const darkMode = useDarkMode(false);
 
 	let content = (
 		<>
-			{/* {useViewport().width < 426 ? <HorizontalSidebar /> : <Sidebar />} */}
-			<Sidebar />
+			{viewPort ? <HorizontalSidebar /> : <Sidebar />}
 
 			<MainStyled id={id}> {children} </MainStyled>
 		</>
 	);
 
-	return useViewport().width < 426 ? (
-		<MobileGridWrapper>{content}</MobileGridWrapper>
+	return viewPort ? (
+		<MobileGridWrapper className={darkMode.value ? darkTheme : ''}>
+			{content}
+		</MobileGridWrapper>
 	) : (
-		<GridWrapper>{content}</GridWrapper>
+		<>
+			<GridWrapper className={darkMode.value ? darkTheme : ''}>
+				{content}
+			</GridWrapper>
+		</>
 	);
 }
 

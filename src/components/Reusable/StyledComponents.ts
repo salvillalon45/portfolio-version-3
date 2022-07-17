@@ -2,14 +2,16 @@ import { styled } from '@stitches/react';
 import { styled as styledConfig } from '../../../stitches.config.js';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
+import * as TogglePrimitive from '@radix-ui/react-toggle';
 
 export const GridWrapper = styled('div', {
 	display: 'grid',
 	padding: '0.5rem',
 	gridTemplateAreas: `'sidebar main main'`,
 	height: '100vh',
-	backgroundColor: '$backgroundGray',
-	fontFamily: '$openSans'
+	backgroundColor: '$gray2',
+	fontFamily: '$openSans',
+	color: '$gray3'
 });
 
 export const MobileGridWrapper = styled('div', {
@@ -18,8 +20,17 @@ export const MobileGridWrapper = styled('div', {
 	gridTemplateAreas: `'main'
 	'sidebar'`,
 	height: '100vh',
-	backgroundColor: '$backgroundGray',
-	fontFamily: '$openSans'
+	backgroundColor: '$gray2',
+	fontFamily: '$openSans',
+	color: '$gray3'
+});
+
+export const LayoutSection = styled('section', {
+	display: 'grid',
+	gap: '1.2rem',
+	margin: 'auto',
+	maxWidth: '50rem',
+	paddingTop: '4rem'
 });
 
 export const SidebarStyled = styledConfig('div', {
@@ -29,16 +40,7 @@ export const SidebarStyled = styledConfig('div', {
 	gap: '1rem',
 	paddingTop: '1rem',
 	paddingLeft: '1rem',
-	paddingRight: '2rem',
-	// '@bp1': { backgroundColor: '#000000' },
-	// '@bp2': { backgroundColor: '#000000' },
-	variants: {
-		color: {
-			pink: { backgroundColor: '#000000' },
-			turq: { backgroundColor: '#FF0000' },
-			orange: { backgroundColor: '#00FF00' }
-		}
-	}
+	paddingRight: '2rem'
 });
 
 export const HorizontalSidebarStyled = styled('div', {
@@ -55,19 +57,18 @@ export const MainStyled = styled('main', {
 	gridArea: 'main',
 	borderRadius: '10px',
 	padding: '2rem',
-	// marginLeft: '0.5rem',
 	overflow: 'auto',
-	backgroundColor: '$white'
+	backgroundColor: '$gray1'
 });
 
 export const PageHeaderContainerStyled = styled('div', {
 	display: 'grid',
-	gap: '0.9rem'
+	gap: '2.5rem'
 });
 
 export const SeparatorStyled = styled(SeparatorPrimitive.Root, {
 	'&[data-orientation=horizontal]': { height: 1, width: '100%' },
-	backgroundColor: '$blue'
+	backgroundColor: '$gray4'
 });
 
 export const HomePageImage = styled('img', {
@@ -121,15 +122,31 @@ export const TitleStyled = styledConfig('h2', {
 export const SubtitleStyled = styledConfig('h3', {
 	fontFamily: '$openSans',
 	fontWeight: '$medium500',
-	fontSize: '$subtitle'
+	fontSize: '$subtitle',
+	color: '$gray4'
 });
 
 export const SidebarMenuItemStyled = styled('li', {
 	display: 'flex',
 	alignItems: 'center',
 	gap: '0.5rem',
+	position: 'static',
+	paddingLeft: '0.4rem',
+	height: '2.25rem',
+	boxSizing: 'border-box',
+	borderRadius: '6px',
+	marginTop: '2px',
+	border: '0.5px solid transparent',
+	transition: 'all .1s ease',
+
+	'&:hover': {
+		borderRadius: '6px',
+		backgroundColor: 'hsla(0,0%,100%,.5)'
+	},
+
 	'& a': {
-		textDecoration: 'none'
+		textDecoration: 'none',
+		color: '$gray3'
 	}
 });
 
@@ -149,11 +166,6 @@ export const Logo = styledConfig('p', {
 	fontSize: '1.5rem'
 });
 
-export const LayoutSection = styled('section', {
-	display: 'grid',
-	gap: '1.2rem'
-});
-
 export const StyledAvatar = styled(AvatarPrimitive.Root, {
 	display: 'inline-flex',
 	alignItems: 'center',
@@ -171,4 +183,20 @@ export const StyledImage = styled(AvatarPrimitive.Image, {
 	height: '100%',
 	objectFit: 'cover',
 	borderRadius: 'inherit'
+});
+
+export const BodyTextStyled = styled('p', {
+	lineHeight: '1.68'
+});
+
+export const DarkThemeToggleStyled = styled(TogglePrimitive.Root, {
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	height: 35,
+	width: 35,
+	color: '$gray3',
+	backgroundColor: 'transparent',
+	borderRadius: 4,
+	placeSelf: 'center'
 });
