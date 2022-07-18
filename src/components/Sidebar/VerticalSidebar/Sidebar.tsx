@@ -1,29 +1,20 @@
 import React from 'react';
-import useDarkMode from 'use-dark-mode';
 import {
 	sideBarMenuItemsIntro,
 	sideBarMenuItemsStayInTouch
-} from '../../lib/Constants';
+} from '../../../lib/Constants';
 import {
-	DarkThemeToggleStyled,
 	Logo,
 	SidebarLogoStyled,
 	SidebarStyled,
 	TextBold700Styled
-} from '../Reusable/StyledComponents';
+} from '../../Reusable/StyledComponents';
 import SidebarMenu from './SidebarMenu';
-import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
+import DarkThemeToggle from '../../Reusable/DarkThemeToggle';
 
 function Sidebar() {
-	const darkMode = useDarkMode(false);
-
 	return (
-		<SidebarStyled
-			className='sidebarStyled'
-			color={{
-				'@bp2': 'violet'
-			}}
-		>
+		<SidebarStyled className='sidebarStyled'>
 			<SidebarLogoStyled>
 				<Logo>
 					Salvador <br /> Villalon Jr
@@ -37,17 +28,7 @@ function Sidebar() {
 
 			<SidebarMenu menuItems={sideBarMenuItemsStayInTouch} />
 
-			<DarkThemeToggleStyled
-				onPressedChange={() => {
-					if (darkMode.value) {
-						return darkMode.disable();
-					}
-
-					return darkMode.enable();
-				}}
-			>
-				{darkMode.value ? <SunIcon /> : <MoonIcon />}
-			</DarkThemeToggleStyled>
+			<DarkThemeToggle />
 		</SidebarStyled>
 	);
 }

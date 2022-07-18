@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { SidebarMenuStyled } from '../Reusable/StyledComponents';
+import { SidebarMenuStyled } from '../../Reusable/StyledComponents';
 import SidebarMenuItem from './SidebarMenuItem';
 
 type SidebarMenuProps = {

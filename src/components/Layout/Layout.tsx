@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Sidebar from '../Sidebar';
+import Sidebar from '../Sidebar/VerticalSidebar';
 import '../../stylesheets/reset.css';
 import {
 	GridWrapper,

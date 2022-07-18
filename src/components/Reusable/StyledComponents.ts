@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { globalCss, styled } from '@stitches/react';
 import { styled as styledConfig } from '../../../stitches.config.js';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
@@ -147,6 +147,11 @@ export const SidebarMenuItemStyled = styled('li', {
 	'& a': {
 		textDecoration: 'none',
 		color: '$gray3'
+	},
+
+	'& .horizontalIcon': {
+		width: 23,
+		height: 23
 	}
 });
 
@@ -199,4 +204,32 @@ export const DarkThemeToggleStyled = styled(TogglePrimitive.Root, {
 	backgroundColor: 'transparent',
 	borderRadius: 4,
 	placeSelf: 'center'
+});
+
+export const IconButton = styled('button', {
+	display: 'inline-flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	position: 'relative',
+	boxSizing: 'border-box',
+	outline: 0,
+	border: 0,
+	margin: 0,
+	cursor: 'pointer',
+	userSelect: 'none',
+	verticalAlign: 'middle',
+	textDecoration: 'none',
+	textAlign: 'center',
+	flex: '0 0 auto',
+	fontSize: '1.5rem',
+	padding: '8px',
+	borderRadius: '50%',
+	overflow: 'visible',
+	color: '$grey3',
+	backgroundColor: 'transparent',
+	transition: 'background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+});
+
+const globalStyles = globalCss({
+	'*': { margin: 0, padding: 0 }
 });

@@ -1,13 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import HomeIcon from '@mui/icons-material/Home';
-import PersonIcon from '@mui/icons-material/Person';
-import SettingsIcon from '@mui/icons-material/Settings';
-import BookIcon from '@mui/icons-material/Book';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import ForumIcon from '@mui/icons-material/Forum';
-import { SidebarMenuItemStyled } from '../Reusable/StyledComponents';
+import { SidebarMenuItemStyled } from '../../Reusable/StyledComponents';
+import { setMenuItemIcon } from '../utils/SidebarUtils';
 
 type SidebarMenuItemProps = {
 	label: string;
@@ -15,25 +9,6 @@ type SidebarMenuItemProps = {
 };
 
 function SidebarMenuItem({ value, label }: SidebarMenuItemProps) {
-	function setMenuItemIcon(): React.ReactNode {
-		switch (value) {
-			case '':
-				return <HomeIcon />;
-			case 'about':
-				return <PersonIcon />;
-			case 'projects':
-				return <SettingsIcon />;
-			case 'experience':
-				return <BookIcon />;
-			case 'linkedin':
-				return <LinkedInIcon />;
-			case 'github':
-				return <GitHubIcon />;
-			case 'contact':
-				return <ForumIcon />;
-		}
-	}
-
 	function setMenuItemLink(): string {
 		switch (value) {
 			case 'linkedin':
@@ -64,7 +39,7 @@ function SidebarMenuItem({ value, label }: SidebarMenuItemProps) {
 
 	return (
 		<SidebarMenuItemStyled>
-			{setMenuItemIcon()}
+			{setMenuItemIcon(value, true)}
 			{createLinkTag()}
 		</SidebarMenuItemStyled>
 	);
