@@ -11,8 +11,15 @@ import {
 } from '../../Reusable/StyledComponents';
 import SidebarMenu from './SidebarMenu';
 import DarkThemeToggle from '../../Reusable/DarkThemeToggle';
+import ContactDialog from '../../ContactDialog';
+import { CreateCssVarsProviderResult } from '@mui/system';
 
-function Sidebar() {
+type SidebarProps = {
+	setShowDialog: (showDialog: boolean) => void;
+	showDialog: boolean;
+};
+
+function Sidebar({ setShowDialog, showDialog }: SidebarProps) {
 	return (
 		<SidebarStyled className='sidebarStyled'>
 			<SidebarLogoStyled>
@@ -22,11 +29,19 @@ function Sidebar() {
 				<p>💻</p>
 			</SidebarLogoStyled>
 
-			<SidebarMenu menuItems={sideBarMenuItemsIntro} />
+			<SidebarMenu
+				menuItems={sideBarMenuItemsIntro}
+				setShowDialog={setShowDialog}
+				showDialog={showDialog}
+			/>
 
 			<TextBold700Styled>Stay In Touch</TextBold700Styled>
 
-			<SidebarMenu menuItems={sideBarMenuItemsStayInTouch} />
+			<SidebarMenu
+				menuItems={sideBarMenuItemsStayInTouch}
+				setShowDialog={setShowDialog}
+				showDialog={showDialog}
+			/>
 
 			<DarkThemeToggle />
 		</SidebarStyled>

@@ -5,12 +5,23 @@ import SidebarMenuItem from './SidebarMenuItem';
 
 type SidebarMenuProps = {
 	menuItems: Array<{ value: string; label: string }>;
+	setShowDialog: (showDialog: boolean) => void;
+	showDialog: boolean;
 };
 
-function SidebarMenu({ menuItems }: SidebarMenuProps) {
+function SidebarMenu({
+	menuItems,
+	setShowDialog,
+	showDialog
+}: SidebarMenuProps) {
 	function renderMenuItems() {
 		return menuItems.map((item) => (
-			<SidebarMenuItem label={item.label} value={item.value} />
+			<SidebarMenuItem
+				label={item.label}
+				value={item.value}
+				setShowDialog={setShowDialog}
+				showDialog={showDialog}
+			/>
 		));
 	}
 

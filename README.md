@@ -16,7 +16,7 @@ List of Pending UI Fixes
 
 -   ~~Need to fix the styling of the UI buttons when viewed on mobile (7/18/2022)~~
 
--   Projects page when viewed on mobile tends to extend to the right a bit creating more space
+-   ~~Projects page when viewed on mobile tends to extend to the right a bit creating more space~~
 
 -   Need to create contact modal functionality
 
