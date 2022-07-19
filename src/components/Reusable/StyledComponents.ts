@@ -84,7 +84,7 @@ export const ProjectImage = styled('img', {
 
 export const ProjectItemStyled = styled('div', {
 	display: 'grid',
-	gridTemplateColumns: `repeat(auto-fit, minmax(300px, 1fr))`,
+	gridTemplateColumns: `repeat(auto-fit, minmax(200px, 1fr))`,
 	gap: '2rem'
 });
 
