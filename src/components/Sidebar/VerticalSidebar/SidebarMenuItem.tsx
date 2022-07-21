@@ -1,37 +1,15 @@
-import { Cross2Icon } from '@radix-ui/react-icons';
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import ContactDialog from '../../ContactDialog';
-import {
-	Dialog,
-	DialogClose,
-	DialogContent,
-	DialogDescription,
-	DialogTitle,
-	DialogTrigger,
-	Fieldset,
-	Input,
-	Label
-} from '../../ContactDialog/ContactDialogStyledComponents';
-import {
-	IconButton,
-	SidebarMenuItemStyled
-} from '../../Reusable/StyledComponents';
+import { SidebarMenuItemStyled } from '../../Reusable/StyledComponents';
 import { setMenuItemIcon } from '../utils/SidebarUtils';
 
 type SidebarMenuItemProps = {
 	label: string;
 	value: string;
-	setShowDialog: (showDialog: boolean) => void;
-	showDialog: boolean;
 };
 
-function SidebarMenuItem({
-	value,
-	label,
-	setShowDialog,
-	showDialog
-}: SidebarMenuItemProps) {
+function SidebarMenuItem({ value, label }: SidebarMenuItemProps) {
 	function setMenuItemLink(): string {
 		switch (value) {
 			case 'linkedin':

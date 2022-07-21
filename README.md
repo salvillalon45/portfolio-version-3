@@ -12,13 +12,13 @@ List of Pending UI Fixes
 -   Investiage why media queries in stiches do not work. Need to apply media queries for the following elements
 
     -   Home Page Image, it should be bigger when viewed on mobile (7/18/2022)
-    -   I need to include the dark theme button when viewed on mobile (7/18/2022)
+    -   ~~I need to include the dark theme button when viewed on mobile (7/18/2022)~~
 
 -   ~~Need to fix the styling of the UI buttons when viewed on mobile (7/18/2022)~~
 
 -   ~~Projects page when viewed on mobile tends to extend to the right a bit creating more space~~
 
--   Need to create contact modal functionality
+-   ~~Need to create contact modal functionality~~
 
 List Of Overall Features to Complete
 

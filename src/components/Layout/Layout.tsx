@@ -10,7 +10,6 @@ import HorizontalSidebar from '../Sidebar/HorizontalSidebar';
 import { useViewport } from '../../lib/Hooks';
 import useDarkMode from 'use-dark-mode';
 import { darkTheme } from '../../../stitches.config.js';
-import ContactDialog from '../ContactDialog';
 
 type LayoutProps = {
 	children: ReactNode;
@@ -20,18 +19,10 @@ type LayoutProps = {
 function Layout({ children, id }: LayoutProps): React.ReactElement {
 	const viewPort = useViewport().width < 426;
 	const darkMode = useDarkMode(false);
-	const [showDialog, setShowDialog] = useState(false);
 
 	let content = (
 		<>
-			{viewPort ? (
-				<HorizontalSidebar />
-			) : (
-				<Sidebar
-					setShowDialog={setShowDialog}
-					showDialog={showDialog}
-				/>
-			)}
+			{viewPort ? <HorizontalSidebar /> : <Sidebar />}
 
 			<MainStyled id={id}> {children} </MainStyled>
 		</>

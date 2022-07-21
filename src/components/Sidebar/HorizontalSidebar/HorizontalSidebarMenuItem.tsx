@@ -3,6 +3,7 @@ import { navigate } from 'gatsby';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { IconButton } from '../../Reusable/StyledComponents';
 import { setMenuItemIcon, setMenuItemLink } from '../utils/SidebarUtils';
+import ContactDialog from '../../ContactDialog';
 
 type HorizontalSidebarMenuItemProps = {
 	label: string;
@@ -25,11 +26,15 @@ function HorizontalSidebarMenuItem({
 	}
 
 	function createButton() {
-		return (
-			<IconButton onClick={() => createLinkTag()}>
-				{setMenuItemIcon(value)}
-			</IconButton>
-		);
+		if (value === 'contact') {
+			return <ContactDialog label={label} isHorizontal={true} />;
+		} else {
+			return (
+				<IconButton onClick={() => createLinkTag()}>
+					{setMenuItemIcon(value)}
+				</IconButton>
+			);
+		}
 	}
 
 	return (

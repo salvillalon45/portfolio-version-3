@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled, keyframes } from '@stitches/react';
-import { violet, blackA, mauve, green } from '@radix-ui/colors';
-import { Cross2Icon } from '@radix-ui/react-icons';
+import { blackA } from '@radix-ui/colors';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 const overlayShow = keyframes({
@@ -24,7 +23,9 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 });
 
 const StyledContent = styled(DialogPrimitive.Content, {
-	backgroundColor: 'white',
+	fontFamily: '$openSans',
+	backgroundColor: '$gray2',
+	color: '$gray3',
 	borderRadius: 6,
 	boxShadow:
 		'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
@@ -53,14 +54,15 @@ function Content({ children, ...props }) {
 
 const StyledTitle = styled(DialogPrimitive.Title, {
 	margin: 0,
-	fontWeight: 500,
-	color: mauve.mauve12,
-	fontSize: 17
+	color: '$gray3',
+	fontFamily: '$openSans',
+	fontWeight: '$bold700',
+	fontSize: '$subtitle'
 });
 
 const StyledDescription = styled(DialogPrimitive.Description, {
 	margin: '10px 0 20px',
-	color: mauve.mauve11,
+	color: '$gray3',
 	fontSize: 15,
 	lineHeight: 1.5
 });
@@ -73,39 +75,6 @@ export const DialogTitle = StyledTitle;
 export const DialogDescription = StyledDescription;
 export const DialogClose = DialogPrimitive.Close;
 
-export const Fieldset = styled('fieldset', {
-	all: 'unset',
-	display: 'flex',
-	gap: 20,
-	alignItems: 'center',
-	marginBottom: 15
-});
-
-export const Label = styled('label', {
-	fontSize: 15,
-	color: violet.violet11,
-	width: 90,
-	textAlign: 'right'
-});
-
-export const Input = styled('input', {
-	all: 'unset',
-	width: '100%',
-	flex: '1',
-	display: 'inline-flex',
-	alignItems: 'center',
-	justifyContent: 'center',
-	borderRadius: 4,
-	padding: '0 10px',
-	fontSize: 15,
-	lineHeight: 1,
-	color: violet.violet11,
-	boxShadow: `0 0 0 1px ${violet.violet7}`,
-	height: 35,
-
-	'&:focus': { boxShadow: `0 0 0 2px ${violet.violet8}` }
-});
-
 export const IconButton = styled('button', {
 	all: 'unset',
 	fontFamily: 'inherit',
@@ -115,21 +84,26 @@ export const IconButton = styled('button', {
 	display: 'inline-flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-	color: violet.violet11,
+	color: '$gray3',
 	position: 'absolute',
 	top: 10,
 	right: 10,
 
-	'&:hover': { backgroundColor: violet.violet4 },
-	'&:focus': { boxShadow: `0 0 0 2px ${violet.violet7}` }
+	'&:hover': { backgroundColor: '$gray1' },
+	'&:focus': { boxShadow: `0 0 0 2px $gray1` }
 });
 
 export const DialogContactRow = styled('div', {
-	display: 'flex'
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'space-between',
+	flexWrap: 'wrap',
+	gap: '1rem'
 });
 
 export const DialogContactDescription = styled('div', {
 	display: 'flex',
+	gap: '0.5rem',
 	flexDirection: 'column'
 });
 

@@ -1,4 +1,4 @@
-import { CopyIcon, Cross2Icon, Pencil2Icon } from '@radix-ui/react-icons';
+import { ChatBubbleIcon, Cross2Icon } from '@radix-ui/react-icons';
 import React from 'react';
 import { TextBold700Styled } from '../Reusable/StyledComponents';
 import {
@@ -11,23 +11,35 @@ import {
 	DialogDescription,
 	DialogTitle,
 	DialogTrigger,
-	Fieldset,
-	IconButton,
-	Input,
-	Label
+	IconButton
 } from './ContactDialogStyledComponents';
+import { IconButton as NavBarIconButton } from '../Reusable/StyledComponents';
+import ClipboardCopyButton from '../ClipboardCopyButton';
+import useDarkMode from 'use-dark-mode';
+import { darkTheme } from '../../../stitches.config.js';
 
 type ContactDialogProps = {
 	label: string;
+	isHorizontal: boolean;
 };
 
-export default function ContactDialog({ label }: ContactDialogProps) {
+export default function ContactDialog({
+	label,
+	isHorizontal = false
+}: ContactDialogProps) {
+	const darkMode = useDarkMode(false);
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<a href='#'>{label}</a>
+				{isHorizontal ? (
+					<NavBarIconButton>
+						<ChatBubbleIcon />
+					</NavBarIconButton>
+				) : (
+					<a href='#'>{label}</a>
+				)}
 			</DialogTrigger>
-			<DialogContent>
+			<DialogContent className={darkMode.value ? darkTheme : ''}>
 				<DialogTitle>Contact</DialogTitle>
 				<DialogDescription>Let's Stay In Touch!</DialogDescription>
 				<DialogContactRow>
@@ -37,18 +49,7 @@ export default function ContactDialog({ label }: ContactDialogProps) {
 					</DialogContactDescription>
 
 					<DialogContactActions>
-						<a
-							href='mailto:salvadorvillalon54@gmail.com'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<Pencil2Icon />
-							<span>Compose</span>
-						</a>
-						<button>
-							<CopyIcon />
-							<span id='copy-text'>Copy</span>
-						</button>
+						<ClipboardCopyButton copyText='salvadorvillalon54@gmail.com' />
 					</DialogContactActions>
 				</DialogContactRow>
 				<DialogClose asChild>
