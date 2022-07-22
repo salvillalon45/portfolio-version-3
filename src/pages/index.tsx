@@ -5,7 +5,7 @@ import { LayoutSection } from '../components/Reusable/StyledComponents';
 
 function IndexPage() {
 	return (
-		<Layout id={'indexPageContainer'}>
+		<Layout id={'homePageContainer'}>
 			<LayoutSection>
 				<HomePageContent />
 			</LayoutSection>

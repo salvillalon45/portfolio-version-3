@@ -1,7 +1,7 @@
 export const sideBarMenuItemsIntro = [
 	{
 		label: 'Home',
-		value: ''
+		value: 'home'
 	},
 	{
 		label: 'About',

@@ -12,7 +12,11 @@ import {
 import SidebarMenu from './SidebarMenu';
 import DarkThemeToggle from '../../Reusable/DarkThemeToggle';
 
-function Sidebar() {
+type SidebarProps = {
+	pageId: string;
+};
+
+function Sidebar({ pageId }: SidebarProps) {
 	return (
 		<SidebarStyled className='sidebarStyled'>
 			<SidebarLogoStyled>
@@ -22,7 +26,7 @@ function Sidebar() {
 				<p>💻</p>
 			</SidebarLogoStyled>
 
-			<SidebarMenu menuItems={sideBarMenuItemsIntro} />
+			<SidebarMenu pageId={pageId} menuItems={sideBarMenuItemsIntro} />
 
 			<TextBold700Styled>Stay In Touch</TextBold700Styled>
 

@@ -17,6 +17,7 @@ import { IconButton as NavBarIconButton } from '../Reusable/StyledComponents';
 import ClipboardCopyButton from '../ClipboardCopyButton';
 import useDarkMode from 'use-dark-mode';
 import { darkTheme } from '../../../stitches.config.js';
+import { setMenuItemIcon } from '../Sidebar/utils/SidebarUtils';
 
 type ContactDialogProps = {
 	label: string;
@@ -25,9 +26,10 @@ type ContactDialogProps = {
 
 export default function ContactDialog({
 	label,
-	isHorizontal = false
+	isHorizontal
 }: ContactDialogProps) {
 	const darkMode = useDarkMode(false);
+	console.log(label);
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -36,7 +38,10 @@ export default function ContactDialog({
 						<ChatBubbleIcon />
 					</NavBarIconButton>
 				) : (
-					<a href='#'>{label}</a>
+					<a href='#'>
+						{setMenuItemIcon('contact', true)}
+						{label}
+					</a>
 				)}
 			</DialogTrigger>
 			<DialogContent className={darkMode.value ? darkTheme : ''}>

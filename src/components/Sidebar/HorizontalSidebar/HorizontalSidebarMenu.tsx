@@ -5,12 +5,20 @@ import HorizontalSidebarMenuItem from './HorizontalSidebarMenuItem';
 
 type HorizontalSidebarMenuProps = {
 	menuItems: Array<{ value: string; label: string }>;
+	pageId: string;
 };
 
-function HorizontalSidebarMenu({ menuItems }: HorizontalSidebarMenuProps) {
+function HorizontalSidebarMenu({
+	menuItems,
+	pageId
+}: HorizontalSidebarMenuProps) {
 	function renderMenuItems() {
 		return menuItems.map((item) => (
-			<HorizontalSidebarMenuItem label={item.label} value={item.value} />
+			<HorizontalSidebarMenuItem
+				pageId={pageId}
+				label={item.label}
+				value={item.value}
+			/>
 		));
 	}
 

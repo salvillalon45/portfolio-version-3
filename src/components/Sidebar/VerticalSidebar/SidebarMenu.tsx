@@ -5,20 +5,21 @@ import SidebarMenuItem from './SidebarMenuItem';
 
 type SidebarMenuProps = {
 	menuItems: Array<{ value: string; label: string }>;
+	pageId: string | null | undefined;
 };
 
-function SidebarMenu({ menuItems }: SidebarMenuProps) {
+function SidebarMenu({ menuItems, pageId }: SidebarMenuProps) {
 	function renderMenuItems() {
 		return menuItems.map((item) => (
-			<SidebarMenuItem label={item.label} value={item.value} />
+			<SidebarMenuItem
+				pageId={pageId}
+				label={item.label}
+				value={item.value}
+			/>
 		));
 	}
 
-	return (
-		<nav>
-			<SidebarMenuStyled>{renderMenuItems()}</SidebarMenuStyled>
-		</nav>
-	);
+	return <SidebarMenuStyled>{renderMenuItems()}</SidebarMenuStyled>;
 }
 
 export default SidebarMenu;

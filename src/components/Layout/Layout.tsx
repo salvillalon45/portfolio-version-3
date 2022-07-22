@@ -22,7 +22,11 @@ function Layout({ children, id }: LayoutProps): React.ReactElement {
 
 	let content = (
 		<>
-			{viewPort ? <HorizontalSidebar /> : <Sidebar />}
+			{viewPort ? (
+				<HorizontalSidebar pageId={id} />
+			) : (
+				<Sidebar pageId={id} />
+			)}
 
 			<MainStyled id={id}> {children} </MainStyled>
 		</>

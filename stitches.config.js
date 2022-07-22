@@ -33,9 +33,8 @@ export const {
 		},
 		media: {
 			bp1: '(max-width: 426px)',
-			bp2: '(max-width: 769px)',
-			bp3: '(min-width: 575px)',
-			bp4: '(min-width: 750px)'
+			bp2: '(min-width: 768px)',
+			bp3: '(min-width: 1024px)'
 		}
 	}
 });

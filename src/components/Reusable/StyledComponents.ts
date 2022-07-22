@@ -71,10 +71,14 @@ export const SeparatorStyled = styled(SeparatorPrimitive.Root, {
 	backgroundColor: '$gray4'
 });
 
-export const HomePageImage = styled('img', {
+export const HomePageImage = styledConfig('img', {
 	height: 'auto',
 	width: '32%',
-	borderRadius: '1rem'
+	borderRadius: '1rem',
+	'@bp1': {
+		backgroundColor: 'red',
+		width: '100rem'
+	}
 });
 
 export const ProjectImage = styled('img', {
@@ -123,41 +127,75 @@ export const SubtitleStyled = styledConfig('h3', {
 	fontFamily: '$openSans',
 	fontWeight: '$medium500',
 	fontSize: '$subtitle',
-	color: '$gray4'
+	color: '$gray4',
+	lineHeight: '1.68'
 });
 
-export const SidebarMenuItemStyled = styled('li', {
-	display: 'flex',
-	alignItems: 'center',
-	gap: '0.5rem',
-	position: 'static',
-	paddingLeft: '0.4rem',
-	height: '2.25rem',
-	boxSizing: 'border-box',
-	borderRadius: '6px',
-	marginTop: '2px',
-	border: '0.5px solid transparent',
-	transition: 'all .1s ease',
-
-	'&:hover': {
-		borderRadius: '6px',
-		backgroundColor: 'hsla(0,0%,100%,.5)'
-	},
+export const ButtonGroupStyled = styled('div', {
+	display: 'inline-flex',
+	borderRadius: '4px',
+	boxShadow:
+		'0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)',
 
 	'& a': {
+		display: 'inline-flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		position: 'relative',
+		boxSizing: 'border-box',
+		outline: 0,
+		border: 0,
+		margin: 0,
+		userSelect: 'none',
+		verticalAlign: 'middle',
 		textDecoration: 'none',
-		color: '$gray3'
+		textAlign: 'center',
+		flex: '0 0 auto',
+		fontSize: '1.5rem',
+		padding: '8px',
+		overflow: 'visible',
+		color: '$grey3',
+		backgroundColor: 'transparent',
+		transition: 'background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
 	},
 
-	'& .horizontalIcon': {
-		width: 23,
-		height: 23
+	'&.active-page': {
+		backgroundColor: 'hsla(0,0%,100%,.5)'
 	}
 });
 
-export const SidebarMenuStyled = styled('ul', {
+export const SidebarMenuStyled = styled('nav', {
 	display: 'grid',
-	gap: '0.5rem'
+	gap: '0.5rem',
+
+	'& a': {
+		display: 'flex',
+		alignItems: 'center',
+		gap: '0.5rem',
+		position: 'static',
+		paddingLeft: '0.4rem',
+		height: '2.25rem',
+		boxSizing: 'border-box',
+		borderRadius: '6px',
+		marginTop: '2px',
+		border: '0.5px solid transparent',
+		transition: 'all .1s ease',
+		textDecoration: 'none',
+		color: '$gray3',
+
+		'&:hover': {
+			backgroundColor: 'hsla(0,0%,100%,.5)'
+		},
+
+		'& .horizontalIcon': {
+			width: 23,
+			height: 23
+		}
+	},
+
+	'& .active-page': {
+		backgroundColor: 'hsla(0,0%,100%,.5)'
+	}
 });
 
 export const SidebarLogoStyled = styled('div', {
@@ -206,7 +244,7 @@ export const DarkThemeToggleStyled = styled(TogglePrimitive.Root, {
 	placeSelf: 'center'
 });
 
-export const IconButton = styled('button', {
+export const IconButton = styled('a', {
 	display: 'inline-flex',
 	alignItems: 'center',
 	justifyContent: 'center',
