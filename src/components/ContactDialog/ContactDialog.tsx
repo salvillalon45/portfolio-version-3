@@ -29,7 +29,6 @@ export default function ContactDialog({
 	isHorizontal
 }: ContactDialogProps) {
 	const darkMode = useDarkMode(false);
-	console.log(label);
 	return (
 		<Dialog>
 			<DialogTrigger asChild>

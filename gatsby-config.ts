@@ -1,4 +1,7 @@
 import type { GatsbyConfig } from 'gatsby';
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`
+});
 
 const config: GatsbyConfig = {
 	siteMetadata: {
@@ -22,6 +25,15 @@ const config: GatsbyConfig = {
 				path: './src/images/'
 			},
 			__key: 'images'
+		},
+		{
+			resolve: `gatsby-source-notion-api`,
+			options: {
+				token: process.env.NOTION_SECRET,
+				databaseId: process.env.NOTION_DATABASE_ID,
+				propsToFrontmatter: true,
+				lowerTitleLevel: true
+			}
 		}
 	]
 };

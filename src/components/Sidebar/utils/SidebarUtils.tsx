@@ -67,7 +67,6 @@ export function createLinkTag(
 	isHorizontal: boolean,
 	pageMatchFlag: boolean
 ) {
-	console.log({ pageMatchFlag });
 	switch (value) {
 		case 'linkedin':
 		case 'github':

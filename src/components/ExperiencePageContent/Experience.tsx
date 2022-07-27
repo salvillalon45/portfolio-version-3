@@ -1,5 +1,7 @@
+import { useStaticQuery } from 'gatsby';
 import React from 'react';
 import { sampleExperiencesData } from '../../lib/Constants';
+import { useExperienceData } from '../../lib/queries';
 import {
 	ExperienceContainerStyled,
 	SeparatorStyled
@@ -7,8 +9,34 @@ import {
 import ExperienceItem from './ExperienceItem';
 
 function Experiences() {
+	const experienceFetchData = useExperienceData();
+	const experienceDataArray = experienceFetchData.allNotion.nodes;
+
+	console.log({ experienceDataArray });
+
 	function renderExperienceItems() {
-		return sampleExperiencesData.map((experienceData) => {
+		return experienceDataArray.map((experienceData) => {
+			const { title, raw } = experienceData;
+			const job_title = title;
+			let description = '';
+
+			raw.children.forEach((pageChild) => {
+				const { paragraph } = pageChild;
+				console.log({ paragraph });
+				const { text } = paragraph;
+
+				text.forEach((textData) => {
+					const { href, plain_text } = textData;
+					console.log({ href, plain_text });
+					if (href) {
+					} else {
+					}
+				});
+			});
+
+			// cons description
+			// date,
+			// link_to_company
 			return (
 				<>
 					<ExperienceItem {...experienceData} />
