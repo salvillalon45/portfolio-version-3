@@ -13,14 +13,25 @@ function HomePageContent() {
 			<PageHeader title={title} subtitle={subtitle} />
 
 			<BodyTextStyled>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-				varius metus elit, vitae euismod diam dignissim non. Mauris
-				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
-				libero sit amet luctus sagittis. Integer vitae ornare elit.
-				Fusce id eros non dui molestie tincidunt ut eu tellus. Cras
-				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
-				feugiat venenatis. Phasellus et tristique felis, vel consequat
-				nunc.
+				My name is Salvador Villalon Jr and welcome to my space in the
+				internet!
+			</BodyTextStyled>
+
+			<BodyTextStyled>
+				I am a Software Engineer with an aspiration to work on ideas
+				that make a positive impact in the world!
+			</BodyTextStyled>
+
+			<BodyTextStyled>
+				I am working at Accenture as a Software Engineer. I have worked
+				for Code.org and currently creating innovative full-stack
+				applications at a Fortune 500 Social Media Company. I am a Lead
+				Full Stack engineer collaborating with a team of 3 off-shore
+				engineers to deliver a brand new internal tool.
+			</BodyTextStyled>
+
+			<BodyTextStyled>
+				Feel free to look around and thanks again for visiting!
 			</BodyTextStyled>
 		</>
 	);

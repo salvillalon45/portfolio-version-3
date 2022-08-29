@@ -1,7 +1,24 @@
 import React from 'react';
-import { aboutPageHeaderItems } from '../../lib/Constants';
+import {
+	aboutMeSectionItems,
+	aboutPageHeaderItems,
+	careerSectionItems,
+	currentlyIAmSectionItems,
+	educationSkillsPersonalProjecsSectionItems,
+	intoCSAndSWESectionItems,
+	longTermSectionItems,
+	myGoalsSectionItems,
+	shortTermSectionItems
+} from '../../lib/Constants';
 import PageHeader from '../Reusable/PageHeader';
-import { BodyTextStyled } from '../Reusable/StyledComponents';
+import {
+	BodyTextStyled,
+	Emoji,
+	ListMenu,
+	TextBold700Styled
+} from '../Reusable/StyledComponents';
+import AboutPageSection from './AboutPageSection';
+import AboutPageSubSection from './AboutPageSubSection';
 
 function AboutPageContent() {
 	const { title, subtitle } = aboutPageHeaderItems;
@@ -9,28 +26,19 @@ function AboutPageContent() {
 	return (
 		<>
 			<PageHeader title={title} subtitle={subtitle} />
+			<AboutPageSection {...aboutMeSectionItems} />
 
-			<BodyTextStyled>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-				varius metus elit, vitae euismod diam dignissim non. Mauris
-				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
-				libero sit amet luctus sagittis. Integer vitae ornare elit.
-				Fusce id eros non dui molestie tincidunt ut eu tellus. Cras
-				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
-				feugiat venenatis. Phasellus et tristique felis, vel consequat
-				nunc.
-			</BodyTextStyled>
+			<AboutPageSection {...intoCSAndSWESectionItems} />
 
-			<BodyTextStyled>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-				varius metus elit, vitae euismod diam dignissim non. Mauris
-				vitae est ligula. Quisque sit amet iaculis nisi. Donec congue
-				libero sit amet luctus sagittis. Integer vitae ornare elit.
-				Fusce id eros non dui molestie tincidunt ut eu tellus. Cras
-				dictum ornare maximus. Etiam rhoncus enim augue, et eleifend est
-				feugiat venenatis. Phasellus et tristique felis, vel consequat
-				nunc.
-			</BodyTextStyled>
+			<AboutPageSection {...currentlyIAmSectionItems} />
+			<AboutPageSubSection {...careerSectionItems} />
+			<AboutPageSubSection
+				{...educationSkillsPersonalProjecsSectionItems}
+			/>
+
+			<AboutPageSection {...myGoalsSectionItems} />
+			<AboutPageSubSection {...shortTermSectionItems} />
+			<AboutPageSubSection {...longTermSectionItems} />
 		</>
 	);
 }

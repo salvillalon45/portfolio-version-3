@@ -16,7 +16,6 @@ const EXPERIENCE_DATA_QUERY = graphql`
 						paragraph {
 							text {
 								plain_text
-								href
 							}
 						}
 					}
@@ -32,6 +31,26 @@ const EXPERIENCE_DATA_QUERY = graphql`
 								file {
 									url
 								}
+							}
+						}
+						entity {
+							rich_text
+						}
+						link_to_code {
+							url
+						}
+						link_to_site {
+							url
+						}
+						start_date {
+							date {
+								start(formatString: "")
+								end(formatString: "")
+							}
+						}
+						title {
+							title {
+								plain_text
 							}
 						}
 					}

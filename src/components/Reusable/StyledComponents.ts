@@ -63,7 +63,7 @@ export const MainStyled = styled('main', {
 
 export const PageHeaderContainerStyled = styled('div', {
 	display: 'grid',
-	gap: '2.5rem'
+	gap: '1rem'
 });
 
 export const SeparatorStyled = styled(SeparatorPrimitive.Root, {
@@ -104,13 +104,14 @@ export const ExperienceContainerStyled = styled('div', {
 
 export const ExperienceItemStyled = styled('div', {
 	display: 'flex',
-	flexWrap: 'wrap',
+	// flexWrap: 'wrap',
 	gap: '2rem'
 });
 
 export const AboutDataStyled = styled('div', {
 	display: 'grid',
-	gap: '0.5rem'
+	gap: '0.5rem',
+	lineHeight: 1.68
 });
 
 export const TextBold700Styled = styled('p', {
@@ -270,4 +271,20 @@ export const IconButton = styled('a', {
 
 const globalStyles = globalCss({
 	'*': { margin: 0, padding: 0 }
+});
+
+export const ListMenu = styled('ul', {
+	padding: 'revert',
+	listStyle: 'revert',
+	lineHeight: 1.68
+});
+
+export const Emoji = styled('span', {
+	fontSize: '1.5rem'
+});
+
+export const AboutPageSubSectionContainer = styled('div', {
+	marginLeft: '1.5rem',
+	display: 'grid',
+	gap: '0.8rem'
 });
